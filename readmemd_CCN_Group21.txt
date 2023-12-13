@@ -1,86 +1,51 @@
 Following project is exceuting in linux machine ubuntu. Python 3.6.9 is required. -
+Clone the main github repo on local machine 
+main github "https://github.com/NUStreaming/BoB.git"
+Forked github "https://github.com/cbadguj/BoB.git"
+After cloning
 
 Modify the Directory:
-
-
 cd BoB: Navigate to the directory "BoB."
 
-Image of a Pull Docker:
-
-
-
+Image of a Docker:
 docker pull sudo Download a Docker image from the provided repository using opennetlab.azurecr.io/challenge-env.
 
 Files to be downloaded:
-
-
-
 wget https://raw.githubusercontent.com/OpenNetLab/AlphaRTC/main/examples/peerconnection/serverless/corpus/receiver_pyinfer.json -O receiver_pyinfer.json: Download a JSON file and save it as "receiver_pyinfer.json."
-
 wget -O sender_pyinfer.json https://raw.githubusercontent.com/OpenNetLab/AlphaRTC/main/examples/peerconnection/serverless/corpus/sender_pyinfer.json Download and save another JSON file as "sender_pyinfer.json."
 
 Make a Directory:
-
-
-
 make testmedia: Make a folder called "testmedia."
 
 Download the following media files:
-
-
-
 wget -O testmedia/test.wav https://github.com/OpenNetLab/AlphaRTC/raw/main/examples/peerconnection/serverless/corpus/testmedia/test.wav: Download and save an audio file to the "testmedia" directory.
-
 wget https://raw.githubusercontent.com/OpenNetLab/AlphaRTC/main/examples/peerconnection/serverless/corpus/testmedia/test.yuv Download and save a video file to the "testmedia" directory.
 
 Start the Docker Container:
-
 Connection of local machine and docker container can be made through this command 
 sudo docker run -d --rm -v `pwd`:/app -w /app --name alphartc_pyinfer opennetlab.azurecr.io/challenge-env peerconnection_serverless receiver_pyinfer.json
-
 docker run -d --rm -v pwd:/app -w /app alphartc_pyinfer Start a Docker container named opennetlab.azurecr.io/challenge-env peerconnection_serverless receiver_pyinfer.json.
-
-
-Start the Docker Container:
-
-
-
 docker run -d --rm -v pwd:/app -w /app alphartc_pyinfer opennetlab.azurecr.io/challenge-env json file peerconnection_serverless receiver_pyinfer: Start a Docker container named "alphartc_pyinfer" with the supplied specifications, running a peer connection server with the configuration "receiver_pyinfer.json".
 
 Docker Containers List:
-
-
-
-docker run ps -a: List all Docker containers (including those that have been stopped).
+Vefify container is created:
+docker run ps -a:
 
 Script execution in a Docker container:
-
-
-
 sudo docker exec alphartc_pyinfer peerconnection_serverless sender_pyinfer.json: Run a script named "sender_pyinfer.json" inside the Docker container that is currently executing.
 
 Modify the Directory:
-
-
-
-cd environment: Navigate to the directory "environment."
+Navigate to the directory "environment."
+cd environment: 
 
 Environment for Construction:
-
-
-
-sudo make all: Use the "make" command to create the environment.
+ Use the "make" command to create the environment.
+sudo make all:
 
 Using Up Directories:
-
-
-
-cd..: Go up one directory level.
+cd ..: Go up one directory level.
 
 Run the following script with Traffic Control (TC):
-
-
-
 sudo./run_with_tc.sh: Run a script with superuser privileges named "run_with_tc.sh" that may entail network traffic control.
 
 
