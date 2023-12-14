@@ -1,5 +1,5 @@
 Following project is exceuting in linux machine ubuntu. Python 3.6.9 is required. -
-Clone the main github repo on local machine 
+Clone the main github repo on local machine then use bandwidthestimator.py file from our forked repo and replace it inside cloned repo on local machine. 
 main github "https://github.com/NUStreaming/BoB.git"
 Forked github "https://github.com/cbadguj/BoB.git"
 After cloning
